@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="/assets/login.css" rel="stylesheet">
+</head>
+<body>
+
+<% include ./partials/nav.ejs %>
+
+<form action="/action_page.php">
+  
+	<h2 class="heading">Login Form</h2>
+  <div class="container">
+
+	  <div>
+    <label class="label-decor" for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+</div>
+<div>
+    <label class="label-decor" for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+	 </div>   
+	 <div>
+    <button type="submit">Login</button>
+</div>
+	<label class="label-decor">
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
+
+</body>
+</html>
