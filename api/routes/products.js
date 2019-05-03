@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Product = require('../models/product');
 const mongoose = require('mongoose');
-
+const authcheck=require('../middleware/authcheck');
 //get all products
 router.get('/', (req, res, next) => {
     Product.find()
@@ -22,7 +22,7 @@ router.get('/', (req, res, next) => {
         });
 });
 //add product to database
-router.post('/', (req, res, next) => {
+router.post('/',authcheck,(req, res, next) => {
     const product = new Product({
         _id: mongoose.Types.ObjectId(),
         name: req.body.name,

@@ -2,6 +2,9 @@
 #email { background-position: 10px 10px !important;
 padding: 10px;
 }
+#mobile { background-position: 10px 10px !important;
+	padding: 10px;
+	}
 #password { background-position: 10px -53px !important;padding: 10px; }
 #content form input[type="submit"] {
 	background: rgb(254,231,154);

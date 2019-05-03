@@ -8,18 +8,18 @@
 
 <% include ./partials/nav.ejs %>
 
-<form action="/action_page.php">
+<form action="/users/validateUser" method="POST">
   
 	<h2 class="heading">Login Form</h2>
   <div class="container">
 
 	  <div>
-    <label class="label-decor" for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+    <label class="label-decor" for="email"><b>Email-Id</b></label>
+    <input type="email" placeholder="Enter Email" name="email" required>
 </div>
 <div>
-    <label class="label-decor" for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <label class="label-decor" for="password"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
 	 </div>   
 	 <div>
     <button type="submit">Login</button>

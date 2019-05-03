@@ -16,10 +16,13 @@
 		<form action="/users/save" method="post">
 			<h1 class="heading">Sign Up</h1>
 			<div class="input-decor">
-				<input type="email" placeholder="Email Id" required="" id="email" />
+				<input type="email" placeholder="Email Id" name="email" id="email" required/>
 			</div>
 			<div class="input-decor">
-				<input type="password" placeholder="Password" required="" id="password" />
+				<input type="number" placeholder="Mobile No" name="mobile" id="mobile" required/>
+			</div>
+			<div class="input-decor">
+				<input type="password" placeholder="Password" name="password" id="password" required/>
 			</div>
 			<div class="button-decor">
 				<input type="submit" value="Register" />

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Employee List</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+      <% include ./partials/nav.ejs %>
+    <div class="container">
+    
+      <h1>Users List</h1>
+      <% if(users.length>0) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>User Email</th>
+            <th>Mobile</th>
+            <th>Password</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <% for(var i=0; i<users.length;i++) { %>
+            <tr>
+              <td><a href="/users/show/<%= users[i]._id%>"><%= users[i].email%></a></td>
+              <td><%= users[i].mobile%></td>
+              <td><%= users[i].password%></td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+      <% } else { %>
+        <div>No employees found.</div>
+      <% } %>
+    </div>
+  </body>
+</html>
