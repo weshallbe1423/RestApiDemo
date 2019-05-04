@@ -84,14 +84,16 @@ userController.showContact = function (req, res) {
 }
 userController.validateUser = function (req, res) {
   Users.findOne({ email: req.body.email },
+
+    
     (err, user) => {
       if (err) {
         return res.status(500).send('Error on the server.');
       }
-      if (!user) {
+      if (user.length<=1) {
         return res.status(404).send('No user found.');
       }
-      var passwordIsValid = bcrypt.compare(req.body.password, user.password, (err, result) => {
+      var passwordIsValid = bcrypt.compareSync(req.body.password, user.password, (err, result) => {
         if (err) {
           res.status(401).json({ message: "Auth failed" })
           console.log(err)

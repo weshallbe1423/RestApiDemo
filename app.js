@@ -2,7 +2,7 @@ var express=require('express');
 var app=express();
 var morgan=require('morgan');
 var bodyParser=require('body-parser');
-var ejs=require('ejs');
+//var ejs=require('ejs');
 
 var mongoose=require('mongoose');
 
@@ -20,13 +20,13 @@ app.set('view engine', 'ejs');
 
 
 app.use('/assets', express.static('assets'));
-app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 app.use((req,res,next)=>{
 
     res.header('Access-Control-Allow-Origin','*');
-    res.header('Access-Control-Allow-Origin','Origin,X-Requested-With,Content-Type,Authorizatopn');
+    res.header('Access-Control-Allow-Origin','Origin,X-Requested-With,Content-Type,Authorization');
     if(req.method==='OPTIONS'){
         res.header('Access-Control-Allow-Origin','PUT,POST,GET,PATCH,DELETE');
         return res.status(200).json({});
