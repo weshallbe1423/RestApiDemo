@@ -16,6 +16,7 @@ mongoose.connect('mongodb://localhost:27017/cartdb')
 const productRoutes=require('./api/routes/products');
 const orderRoutes=require('./api/routes/orders');
 const usersRoute=require('./api/routes/users');
+const stockRoutes=require('./api/routes/stocks');
 app.set('view engine', 'ejs');
 
 
@@ -38,7 +39,7 @@ app.use((req,res,next)=>{
 app.use('/products',productRoutes);
 app.use('/orders',orderRoutes);
 app.use('/users',usersRoute);
-
+app.use('/stocks',stockRoutes);
 app.use((req,res,next)=>{
  const error=new Error('Not Found!!')
   error.status=404;
